@@ -14,9 +14,9 @@ public class App {
         ApplicationContext ac = new ClassPathXmlApplicationContext("applicationContext.xml");
         BlueprintsServices bluePrintService = ac.getBean(BlueprintsServices.class);
         Point[] puntos = new Point[]{new Point(15,7)};
-        Blueprint blueprint = new Blueprint("DanielaEdwar", "Lab BluePrint", puntos);
+        Blueprint blueprint = new Blueprint("Wilnita", "Delramas", puntos);
         bluePrintService.addNewBlueprint(blueprint);
-        System.out.println(bluePrintService.getBlueprintsByAuthor("Daniela"));
+        System.out.println(bluePrintService.getBlueprintsByAuthor("Wilnita"));
 
         }
 }

@@ -9,21 +9,25 @@ import java.util.List;
 
 
 public class SubsamplingFilter implements Filter {
-    List<Point> list;
-    List <Point> fList = new ArrayList<>();
+    List<Point> arrayPro;
+    List <Point> arrayFinal = new ArrayList<>();
     int counter = 0;
 
     @Override
     public Blueprint applyFilter(Blueprint bp) {
-        list = bp.getPoints();
-        for (Point p:  list){
+        arrayPro = bp.getPoints();
+        for (Point p:  arrayPro){
             if (counter % 2 == 0){
-                fList.add(new Point(p.getX(), p.getY()));
+                arrayFinal.add(new Point(p.getX(), p.getY()));
             }
             counter+=1;
         }
-        bp.setPoints(fList);
+        bp.setPoints(arrayFinal);
 
         return bp;
     }
+
+
+
+
 }
